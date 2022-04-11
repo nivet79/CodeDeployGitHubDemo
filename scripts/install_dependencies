@@ -50,7 +50,7 @@ sudo touch /etc/nginx/sites-available/textutils
 sudo chmod 777 /etc/nginx/sites-available/textutils
 echo " server {
     listen 80;
-    server_name 13.235.33.137;
+    server_name 35.154.117.198;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
