@@ -1,7 +1,9 @@
 #!/bin/bash
 sudo apt update
-sudo apt-get python3-pip python3-dev nginx
-sudo pip3 install virtualenv
+sudo apt install python3-pip -y
+sudo apt install python3-dev -y  
+sudo apt install nginx -y
+sudo pip3 install virtualenv 
 mkdir ~/projectdir
 cd ~/projectdir
 virtualenv env
