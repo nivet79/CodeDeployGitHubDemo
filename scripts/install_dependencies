@@ -3,6 +3,7 @@ sudo apt update
 sudo apt install python3-pip -y
 sudo apt install python3-dev -y  
 sudo apt install nginx -y
+sudo apt install python3-django -y
 sudo pip3 install virtualenv 
 mkdir ~/projectdir
 cd ~/projectdir || exit
