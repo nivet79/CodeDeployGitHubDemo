@@ -4,14 +4,15 @@ sudo apt install python3-pip -y
 sudo apt install python3-dev -y  
 sudo apt install nginx -y
 sudo apt install python3-django -y
+sudo pip install django gunicorn
 sudo pip3 install virtualenv 
 mkdir ~/projectdir
 cd ~/projectdir || exit
 virtualenv env
 source env/bin/activate
-django-admin startproject textutils ~/projectdir
-~/projectdir/manage.py makemigrations
-~/projectdir/manage.py migrate
+sudo django-admin startproject textutils ~/projectdir
+sudo ~/projectdir/manage.py makemigrations
+sudo ~/projectdir/manage.py migrate
 deactivate
 sudo touch /etc/systemd/system/gunicorn.socket
 sudo chmod 777 /etc/systemd/system/gunicorn.socket
@@ -33,7 +34,7 @@ After=network.target
 
 [Service]
 User=ubuntu
-Group=ubuntu
+Group=www-data
 WorkingDirectory=/home/ubuntu/projectdir
 ExecStart=/home/ubuntu/projectdir/env/bin/gunicorn \
           --access-logfile - \
