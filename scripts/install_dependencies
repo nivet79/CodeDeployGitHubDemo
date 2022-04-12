@@ -6,11 +6,11 @@ sudo apt install nginx -y
 sudo apt install python3-django -y
 sudo pip install django gunicorn
 sudo pip3 install virtualenv 
-mkdir ~/projectdir
-cd ~/projectdir || exit
+mkdir /home/projectdir
+cd /home/projectdir || exit
 virtualenv env
 source env/bin/activate
 sudo django-admin startproject textutils ~/projectdir
-sudo ~/projectdir/manage.py makemigrations
-sudo ~/projectdir/manage.py migrate
+sudo /home/projectdir/manage.py makemigrations
+sudo /home/projectdir/manage.py migrate
 deactivate
