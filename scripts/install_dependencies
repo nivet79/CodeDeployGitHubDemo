@@ -9,7 +9,7 @@ sudo pip3 install virtualenv
 mkdir /home/projectdir
 cd /home/projectdir || exit
 virtualenv env
-source env/bin/activate
+source /home/projectdir/env/bin/activate
 sudo django-admin startproject textutils /home/projectdir
 sudo /home/projectdir/manage.py makemigrations
 sudo /home/projectdir/manage.py migrate
