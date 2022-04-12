@@ -10,7 +10,7 @@ mkdir /home/projectdir
 cd /home/projectdir || exit
 virtualenv env
 source env/bin/activate
-sudo django-admin startproject textutils ~/projectdir
+sudo django-admin startproject textutils /home/projectdir
 sudo /home/projectdir/manage.py makemigrations
 sudo /home/projectdir/manage.py migrate
 deactivate
