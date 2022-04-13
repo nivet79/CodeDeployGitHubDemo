@@ -4,17 +4,19 @@ sudo apt install python3-pip -y
 sudo apt install python3-dev -y  
 sudo apt install nginx -y
 sudo apt install python3-django -y
-sudo pip install django gunicorn
 sudo apt install gunicorn -y
 sudo pip3 install virtualenv 
 mkdir /home/ubuntu/projectdir
 cd /home/ubuntu/projectdir || exit
 virtualenv env
+sudo chown -R ubuntu:ubuntu /home/ubuntu/projectdir/
 source /home/ubuntu/projectdir/env/bin/activate
+pip install django gunicorn
 sudo django-admin startproject textutils /home/ubuntu/projectdir
 sudo /home/ubuntu/projectdir/manage.py makemigrations
 sudo /home/ubuntu/projectdir/manage.py migrate
 deactivate
+sudo chown -R ubuntu:ubuntu /home/ubuntu/projectdir/
 sudo touch /etc/systemd/system/gunicorn.socket
 sudo chmod 777 /etc/systemd/system/gunicorn.socket
 echo "[Unit]
